@@ -32,5 +32,26 @@
   "pilot_testimonial_role": "Gerente General, Hotel Sol y Mar",
   "pilot_title": "Agenda tu Programa Piloto",
   "pilot_subtitle": "Descubre de primera mano cómo Smart Stay puede transformar tu hotel. Comencemos la conversación.",
-  "pilot_cta": "Reservar una Llamada"
+  "pilot_cta": "Reservar una Llamada",
+
+  "//--- PRODUCTS PAGE ---": {},
+  "products_hero_title": "Nuestros Productos: Tecnología que Transforma la Gestión Hotelera",
+  "products_hero_subtitle": "Desde reservas hasta experiencias inteligentes, todo en un solo lugar.",
+  "products_hero_cta": "Descargar Folleto",
+  "products_intro": "Smart Stay ofrece un ecosistema modular, dividido en áreas clave de la gestión hotelera. Puedes elegir exactamente lo que tu hotel necesita, o integrarlos todos para obtener una solución completa.",
+  "product1_title": "Gestión Hotelera",
+  "product1_feat1": "PMS (Property Management System): Control de reservas, habitaciones, check-in/out.",
+  "product1_feat2": "Channel Manager: Sincronización con Booking, Expedia, Airbnb.",
+  "product1_feat3": "Motor de Reservas Web: Reservas directas desde la web del hotel.",
+  "product2_title": "Experiencia del Huésped",
+  "product2_feat1": "Control de Habitación Inteligente (IoT): Control de luces, aire, TV desde el móvil.",
+  "product2_feat2": "App para Huéspedes: Check-in online, servicio de habitaciones, solicitudes.",
+  "product2_feat3": "Feedback y Encuestas: Opiniones en tiempo real con analítica IA.",
+  "product3_title": "Financiera y Operativa",
+  "product3_feat1": "Reportes Financieros: Panel con métricas de ingresos y gastos.",
+  "product3_feat2": "Gestión de Pagos: Tarjetas digitales, monederos electrónicos, facturación electrónica.",
+  "product3_feat3": "Inventario y Housekeeping: Gestión de suministros, limpieza, mantenimiento.",
+  "product4_title": "Seguridad y Soporte",
+  "product4_feat1": "Control de Accesos: Llaves digitales o NFC para huéspedes y personal.",
+  "product4_feat2": "Soporte y Capacitación 24/7: Asistencia al personal y formación continua."
 }
