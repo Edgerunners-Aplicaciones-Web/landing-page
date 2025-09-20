@@ -6,5 +6,23 @@
   "nav_success": "Casos de Éxito",
   "nav_resources": "Recursos",
   "nav_login": "Iniciar Sesión",
-  "nav_register": "Registrarse"
+  "nav_register": "Registrarse",
+
+  "//--- HOME PAGE: HERO & ABOUT ---": {},
+  "hero_title": "Gestión Hotelera + IoT: La Sinergia Perfecta",
+  "hero_subtitle": "Desata el potencial de tu hotel con un ecosistema inteligente que optimiza la operación y revoluciona la experiencia de tus huéspedes.",
+  "hero_cta": "Probar DEMO",
+  "about_title": "Quiénes Somos",
+  "about_description": "Smart Stay es una plataforma de gestión hotelera que integra reservas, operaciones y experiencia del huésped en un solo lugar. Digitalizamos tu hotel para que ahorres tiempo, reduzcas costos y ofrezcas un servicio de primera. Somos un equipo de estudiantes de ingeniería de software apasionados por revolucionar la industria hotelera con tecnología.",
+  "team_title": "Conoce al Equipo",
+  "team_member1_name": "Italo 'Okami' Verona",
+  "team_member1_role": "Líder de Proyecto y Arquitecto",
+  "team_member2_name": "Jane Doe",
+  "team_member2_role": "Desarrolladora Frontend",
+  "team_member3_name": "John Smith",
+  "team_member3_role": "Desarrollador Backend",
+  "team_member4_name": "Emily Martinez",
+  "team_member4_role": "Diseñadora UX/UI",
+  "team_member5_name": "Alex Lee",
+  "team_member5_role": "QA y Testing"
 }
