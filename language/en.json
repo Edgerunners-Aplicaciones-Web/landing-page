@@ -119,5 +119,22 @@
   "pricing_feat_access_desc": "Llaves digitales o NFC.",
   "pricing_feat_support": "Soporte 24/7",
   "pricing_support_basic": "Básico (email y chat)",
-  "pricing_support_premium": "Premium (teléfono + onboarding personalizado)"
+  "pricing_support_premium": "Premium (teléfono + onboarding personalizado)",
+
+  "//--- SUCCESS STORIES PAGE ---": {},
+  "success_hero_title": "Casos de éxito de hoteles con SMARTSTAY",
+  "success_hero_subtitle": "¿Qué dicen ellos y sus huéspedes?",
+  "success_guest_title": "Su huésped:",
+  "success_story1_title": "Hotel Boutique \"Andes View\" - Cusco",
+  "success_story1_main_quote": "\"Antes teníamos que usar tres sistemas distintos para reservas, housekeeping y facturación. Con Smart Stay, todo está integrado, y ahora dedicamos más tiempo a los huéspedes y menos a la administración.\"",
+  "success_story1_main_author": "Gerente General",
+  "success_story1_guest_quote": "\"Hice el check-in desde mi celular y al llegar ya tenía la llave digital lista. Todo fue rápido y sin filas, me encantó.\"",
+  "success_story2_title": "Hotel mediano \"Costa Dorada\" - Lima",
+  "success_story2_main_quote": "\"La app para huéspedes revolucionó nuestro servicio. Las solicitudes llegan en tiempo real y el equipo responde más rápido. Nuestros clientes valoran mucho esta eficiencia.\"",
+  "success_story2_main_author": "Jefe de Operaciones",
+  "success_story2_guest_quote": "\"Pude pedir room service desde la app y hasta programar la limpieza de mi habitación a la hora que me convenía. Sentí que el hotel se adaptaba a mí.\"",
+  "success_story3_title": "Cadena \"Sunset Resort\"",
+  "success_story3_main_quote": "\"Lo que más nos sorprendió fue la rapidez de implementación. En menos de dos meses teníamos el sistema funcionando en todos nuestros hoteles y con el staff capacitado.\"",
+  "success_story3_main_author": "Director de Tecnología",
+  "success_story3_guest_quote": "\"Me impresionó poder controlar las luces, el aire y las cortinas desde mi celular. Fue como estar en un hotel inteligente, mucho más cómodo que en otros lugares donde he estado.\""
 }
