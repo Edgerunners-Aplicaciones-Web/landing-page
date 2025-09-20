@@ -1,0 +1,11 @@
+:root {
+    --primary-blue: #2C3E91;
+    --secondary-orange: #E67E22;
+    --neutral-beige: #F5F5DC;
+    --neutral-gray: #BDC3C7;
+    --accent-green: #1ABC9C;
+    --dark-overlay: rgba(10, 20, 40, 0.7);
+}
+
+.font-brand { font-family: 'Montserrat', sans-serif; }
+.font-body { font-family: 'Open Sans', sans-serif; }
