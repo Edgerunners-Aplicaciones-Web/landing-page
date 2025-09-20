@@ -64,3 +64,75 @@
     background-size: cover;
     background-position: center;
 }
+
+
+/* === PRICING PAGE STYLING === */
+.pricing-hero {
+    background-image: linear-gradient(var(--dark-overlay), var(--dark-overlay)), url('https://images.unsplash.com/photo-1678912128919-b69e9e855c00?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+}
+
+.pricing-table-container {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* To keep the rounded corners */
+}
+
+.pricing-table-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Mobile: show only two columns (Category + Plan Plus) */
+@media (max-width: 768px) {
+    .pricing-table-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .hide-on-mobile {
+        display: none;
+    }
+}
+
+.pricing-cell {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid rgba(200, 200, 200, 0.5);
+    display: flex;
+    align-items: center;
+}
+
+.pricing-table-grid .pricing-cell:not(:last-child) {
+    border-right: 1px solid rgba(200, 200, 200, 0.5);
+}
+
+.pricing-header .pricing-cell {
+    background-color: rgba(0, 0, 0, 0.05);
+    font-weight: bold;
+    color: var(--primary-blue);
+}
+
+.category-cell {
+    font-weight: bold;
+    color: var(--primary-blue);
+    grid-row: span 3; /* Default span, adjust as needed */
+}
+
+.plan-plus-col {
+    background-color: rgba(26, 188, 156, 0.1); /* Light green tint */
+}
+
+.checkmark-icon {
+    color: var(--primary-blue);
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.5rem;
+}
+
+.feature-description {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0.25rem;
+    display: block;
+}
