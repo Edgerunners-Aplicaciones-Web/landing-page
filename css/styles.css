@@ -136,3 +136,57 @@
     margin-top: 0.25rem;
     display: block;
 }
+
+
+/* Testimonial blob shape (decorative) */
+.testimonial-blob {
+    clip-path: polygon(41% 5%, 83% 10%, 100% 50%, 79% 94%, 34% 97%, 0% 63%);
+}
+
+/* Main testimonial (highlighted quote) */
+.main-testimonial {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 1.5rem 0;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: var(--neutral-gray);
+}
+
+.main-testimonial-author {
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+/* Guest testimonial small bubble + avatar */
+.guest-testimonial {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.guest-testimonial-bubble {
+    position: relative;
+    background-color: #e0e0e0;
+    color: #333;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+    font-style: italic;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+/* Small triangle to create speech-bubble effect */
+.guest-testimonial-bubble::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #e0e0e0 transparent transparent;
+}
