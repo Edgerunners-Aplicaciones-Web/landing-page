@@ -24,5 +24,13 @@
   "team_member4_name": "Emily Martinez",
   "team_member4_role": "Diseñadora UX/UI",
   "team_member5_name": "Alex Lee",
-  "team_member5_role": "QA y Testing"
+  "team_member5_role": "QA y Testing",
+
+  "//--- HOME PAGE: PILOT & TESTIMONIAL ---": {},
+  "pilot_testimonial_text": "\"Con Smart Stay, hemos reducido el tiempo de gestión de reservas y check-in/check-out en un 40%, optimizando el trabajo de nuestro personal. La plataforma es intuitiva y el soporte está siempre disponible cuando lo necesitamos.\"",
+  "pilot_testimonial_name": "María López",
+  "pilot_testimonial_role": "Gerente General, Hotel Sol y Mar",
+  "pilot_title": "Agenda tu Programa Piloto",
+  "pilot_subtitle": "Descubre de primera mano cómo Smart Stay puede transformar tu hotel. Comencemos la conversación.",
+  "pilot_cta": "Reservar una Llamada"
 }
