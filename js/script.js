@@ -19,7 +19,8 @@ function showView(viewId, elementId = null) {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    // --- Mobile Menu ---
+// --- Mobile Menu ---
+    /*
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navMenu = document.querySelector('.nav-menu');
 
@@ -34,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+    */
 
     // --- Language Switcher ---
 
