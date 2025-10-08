@@ -120,16 +120,6 @@
     box-shadow: 0 15px 30px rgba(44, 62, 145, 0.2);
 }
 
-.lang-switcher .dropdown {
-    display: none;
-    position: absolute;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-.lang-switcher.active .dropdown {
-    display: block;
-}
-
 .team-member-card img { transition: transform 0.3s ease; }
 .team-member-card:hover img { transform: scale(1.05); }
 
