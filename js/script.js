@@ -94,8 +94,8 @@ function applyTranslations(lang) {
     });
 
     // Re-renderizar iconos de Lucide si está disponible
-    if (typeof lucide !== 'undefined') {
-        lucide.replace();
+    if (window.lucide && typeof window.lucide.replace === 'function') {
+        window.lucide.replace();
     }
 }
 
