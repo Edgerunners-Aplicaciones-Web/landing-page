@@ -90,27 +90,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let currentLang = localStorage.getItem('language') || 'en';
 
+
         const setLanguage = (lang) => {
-            console.log(`--- INTENTANDO CAMBIAR A IDIOMA: ${lang.toUpperCase()} ---`); // Micrófono #1
             currentLang = lang;
             localStorage.setItem('language', lang);
             document.documentElement.lang = lang;
 
             document.querySelectorAll('[data-key]').forEach(element => {
                 const key = element.getAttribute('data-key');
-
-                console.log(`Procesando data-key: "${key}"`);
-
                 if (translations[lang] && translations[lang][key]) {
                     const value = translations[lang][key];
-
-                    console.log(`   -> ¡Encontrado! Valor: "${value}"`);
                     element.innerHTML = value;
-
-                } else {
-                    console.error(`   -> NO encontrado para la clave: "${key}" en el idioma "${lang}"`);
                 }
             });
+
+            // ¡LÍNEA CLAVE! Le decimos a Lucide que vuelva a renderizar los íconos.
+            lucide.replace();
 
             currentLangDisplay.textContent = lang.toUpperCase();
             langDropdown.classList.add('hidden');
