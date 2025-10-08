@@ -30,18 +30,17 @@
             <a href="#" onclick="showView('success-stories-view')" class="nav-link text-white transition-colors py-2 px-3 rounded-md" data-key="nav_success">Success Stories</a>
             <a href="#" onclick="showView('resources-view')" class="nav-link text-white transition-colors py-2 px-3 rounded-md" data-key="nav_resources">Resources</a>
         </div>
-        <div class="flex items-center space-x-4">
-            <div class="lang-switcher relative">
-                <button type="button" class="flex items-center text-white p-2 rounded-md hover:bg-white/20 transition-colors" onclick="toggleLangMenu(event)">
-                    <i data-lucide="globe" class="w-5 h-5 mr-1"></i>
-                    <span id="current-lang">EN</span>
-                    <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
-                </button>
-                <div class="dropdown right-0 mt-2 py-2 w-24 bg-white rounded-md shadow-lg">
-                    <a href="#" onclick="switchLanguage('en'); return false;" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">English</a>
-                    <a href="#" onclick="switchLanguage('es'); return false;" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Spanish</a>
-                </div>
+        <div class="lang-switcher relative">
+            <button type="button" id="lang-toggle-btn" class="flex items-center text-white p-2 rounded-md hover:bg-white/20 transition-colors">
+                <i data-lucide="globe" class="w-5 h-5 mr-1"></i>
+                <span id="current-lang-display">EN</span>
+                <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+            </button>
+            <div id="lang-dropdown" class="dropdown right-0 mt-2 py-2 w-24 bg-white rounded-md shadow-lg hidden">
+                <a href="#" id="lang-en-btn" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">English</a>
+                <a href="#" id="lang-es-btn" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Spanish</a>
             </div>
+        </div>
             <a href="#" class="text-white hidden sm:block font-semibold py-2 px-4 rounded-full hover:bg-white/20 transition-colors" data-key="nav_login">Login</a>
             <a href="#" class="bg-white text-[--primary-blue] font-bold py-2 px-5 rounded-full hover:bg-gray-200 transition-colors shadow-md" data-key="nav_register">Register</a>
         </div>

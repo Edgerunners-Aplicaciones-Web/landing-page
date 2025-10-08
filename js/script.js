@@ -36,44 +36,88 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // --- Language Switcher ---
-    if (typeof translationsEN === 'undefined' || typeof translationsES === 'undefined') {
-        console.error("Translation files (en.js, es.js) are not loaded correctly.");
-        return;
-    }
 
-    const translations = {
-        en: translationsEN,
-        es: translationsES
-    };
+    async function initLanguageSwitcher() {
+        const langToggleButton = document.getElementById('lang-toggle-btn');
+        const langDropdown = document.getElementById('lang-dropdown');
+        const currentLangDisplay = document.getElementById('current-lang-display');
+        const enButton = document.getElementById('lang-en-btn');
+        const esButton = document.getElementById('lang-es-btn');
 
-    const languageSwitcher = document.getElementById('language-switcher');
-    let currentLang = localStorage.getItem('language') || 'en'; // Default to English
+        if (!langToggleButton || !langDropdown) {
+            return;
+        }
 
-    const setLanguage = (lang) => {
-        currentLang = lang;
-        localStorage.setItem('language', lang);
 
-        document.documentElement.lang = lang;
+        async function loadTranslations() {
+            try {
+                const responseEN = await fetch('./language/en.json');
+                const responseES = await fetch('./language/es.json');
 
-        document.querySelectorAll('[data-key]').forEach(element => {
-            const key = element.getAttribute('data-key');
-            if (translations[lang] && translations[lang][key]) {
-                const value = translations[lang][key];
-                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                    element.placeholder = value;
-                } else {
-                    element.textContent = value;
+                if (!responseEN.ok || !responseES.ok) {
+                    throw new Error('Network response was not ok');
                 }
+
+                const translationsEN = await responseEN.json();
+                const translationsES = await responseES.json();
+
+                return { en: translationsEN, es: translationsES };
+            } catch (error) {
+                console.error("No se pudieron cargar los archivos de traducción:", error);
+                return null;
+            }
+        }
+
+        const translations = await loadTranslations();
+        if (!translations) return;
+
+        let currentLang = localStorage.getItem('language') || 'en';
+
+        const setLanguage = (lang) => {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+            document.documentElement.lang = lang;
+
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[lang] && translations[lang][key]) {
+                    const value = translations[lang][key];
+                    // Usamos innerHTML en lugar de textContent por si hay etiquetas como <br>
+                    element.innerHTML = value;
+                }
+            });
+
+            currentLangDisplay.textContent = lang.toUpperCase();
+            langDropdown.classList.add('hidden'); // Oculta el menú al seleccionar
+        };
+
+
+        langToggleButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+            langDropdown.classList.toggle('hidden');
+        });
+
+        enButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            setLanguage('en');
+        });
+
+        esButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            setLanguage('es');
+        });
+
+
+        document.addEventListener('click', (event) => {
+            if (!langDropdown.classList.contains('hidden') && !langToggleButton.contains(event.target)) {
+                langDropdown.classList.add('hidden');
             }
         });
 
-        languageSwitcher.textContent = lang === 'en' ? 'ES' : 'EN';
-    };
+        setLanguage(currentLang);
+    }
 
-    languageSwitcher.addEventListener('click', () => {
-        const newLang = currentLang === 'en' ? 'es' : 'en';
-        setLanguage(newLang);
-    });
+    initLanguageSwitcher();
 
     // --- Testimonial Carousel ---
     const slider = document.querySelector('.testimonial-slider');
@@ -122,9 +166,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-
-    // Set initial language on page load
-    setLanguage(currentLang);
 
     function showView(viewId, elementId = null) {
         document.querySelectorAll('.page-view').forEach(view => {
