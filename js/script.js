@@ -91,16 +91,27 @@ document.addEventListener('DOMContentLoaded', function () {
         let currentLang = localStorage.getItem('language') || 'en';
 
         const setLanguage = (lang) => {
+            console.log(`--- INTENTANDO CAMBIAR A IDIOMA: ${lang.toUpperCase()} ---`); // Micrófono #1
             currentLang = lang;
             localStorage.setItem('language', lang);
             document.documentElement.lang = lang;
 
             document.querySelectorAll('[data-key]').forEach(element => {
                 const key = element.getAttribute('data-key');
+
+                // Micrófono #2: ¿Estamos procesando la clave correcta?
+                console.log(`Procesando data-key: "${key}"`);
+
                 if (translations[lang] && translations[lang][key]) {
                     const value = translations[lang][key];
-                    // Usamos innerHTML en lugar de textContent por si hay etiquetas como <br>
+
+                    // Micrófono #3: ¡Hemos encontrado la traducción!
+                    console.log(`   -> ¡Encontrado! Valor: "${value}"`);
                     element.innerHTML = value;
+
+                } else {
+                    // Micrófono #4: ¡No encontramos la traducción para esta clave!
+                    console.error(`   -> NO encontrado para la clave: "${key}" en el idioma "${lang}"`);
                 }
             });
 
