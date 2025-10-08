@@ -1,3 +1,23 @@
+function showView(viewId, elementId = null) {
+
+    document.querySelectorAll('.page-view').forEach(view => {
+        view.classList.add('hidden');
+    });
+
+    const viewToShow = document.getElementById(viewId);
+    if (viewToShow) {
+        viewToShow.classList.remove('hidden');
+        if (elementId) {
+            document.querySelector(elementId).scrollIntoView({ behavior: 'smooth' });
+        } else {
+            window.scrollTo(0, 0);
+        }
+    } else {
+        console.error('La vista con el ID "' + viewId + '" no fue encontrada.');
+    }
+}
+
+
 document.addEventListener('DOMContentLoaded', function () {
     // --- Mobile Menu ---
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -102,7 +122,29 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+
     // Set initial language on page load
     setLanguage(currentLang);
+
+    function showView(viewId, elementId = null) {
+        document.querySelectorAll('.page-view').forEach(view => {
+            view.style.display = 'none';
+        });
+
+        const viewToShow = document.getElementById(viewId);
+        if (viewToShow) {
+            viewToShow.style.display = 'block';
+            // Si se pasó un ID de elemento, hace scroll hacia él
+            if (elementId) {
+                document.querySelector(elementId).scrollIntoView({ behavior: 'smooth' });
+            } else {
+                window.scrollTo(0, 0);
+            }
+        } else {
+            console.error('La vista con el ID "' + viewId + '" no fue encontrada.');
+        }
+    }
+
+    window.showView = showView;
 });
 
