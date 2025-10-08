@@ -99,24 +99,21 @@ document.addEventListener('DOMContentLoaded', function () {
             document.querySelectorAll('[data-key]').forEach(element => {
                 const key = element.getAttribute('data-key');
 
-                // Micrófono #2: ¿Estamos procesando la clave correcta?
                 console.log(`Procesando data-key: "${key}"`);
 
                 if (translations[lang] && translations[lang][key]) {
                     const value = translations[lang][key];
 
-                    // Micrófono #3: ¡Hemos encontrado la traducción!
                     console.log(`   -> ¡Encontrado! Valor: "${value}"`);
                     element.innerHTML = value;
 
                 } else {
-                    // Micrófono #4: ¡No encontramos la traducción para esta clave!
                     console.error(`   -> NO encontrado para la clave: "${key}" en el idioma "${lang}"`);
                 }
             });
 
             currentLangDisplay.textContent = lang.toUpperCase();
-            langDropdown.classList.add('hidden'); // Oculta el menú al seleccionar
+            langDropdown.classList.add('hidden');
         };
 
 
