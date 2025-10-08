@@ -17,6 +17,21 @@ function showView(viewId, elementId = null) {
     }
 }
 
+function scrollCarousel(carouselId, direction) {
+    const carousel = document.getElementById(carouselId);
+    if (carousel) {
+        const scrollAmount = carousel.querySelector('.doc-card, .blog-card').offsetWidth + 24; // Ancho de la tarjeta + gap
+        const newScrollLeft = direction === 'left'
+            ? carousel.scrollLeft - scrollAmount
+            : carousel.scrollLeft + scrollAmount;
+
+        carousel.scrollTo({
+            left: newScrollLeft,
+            behavior: 'smooth'
+        });
+    }
+}
+
 
 document.addEventListener('DOMContentLoaded', function () {
 // --- Mobile Menu ---
