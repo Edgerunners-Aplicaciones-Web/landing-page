@@ -1,5 +1,4 @@
 function showView(viewId, elementId = null) {
-
     document.querySelectorAll('.page-view').forEach(view => {
         view.classList.add('hidden');
     });
@@ -20,7 +19,7 @@ function showView(viewId, elementId = null) {
 function scrollCarousel(carouselId, direction) {
     const carousel = document.getElementById(carouselId);
     if (carousel) {
-        const scrollAmount = carousel.querySelector('.doc-card, .blog-card').offsetWidth + 24; // Ancho de la tarjeta + gap
+        const scrollAmount = carousel.querySelector('.doc-card, .blog-card').offsetWidth + 24;
         const newScrollLeft = direction === 'left'
             ? carousel.scrollLeft - scrollAmount
             : carousel.scrollLeft + scrollAmount;
@@ -32,51 +31,37 @@ function scrollCarousel(carouselId, direction) {
     }
 }
 
-
-document.addEventListener('DOMContentLoaded', function () {
-// --- Mobile Menu ---
-    /*
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navMenu = document.querySelector('.nav-menu');
-
-    mobileMenuBtn.addEventListener('click', function () {
-        navMenu.classList.toggle('active');
-    });
-
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            if (navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
-            }
-        });
-    });
-    */
-
-    // --- Language Switcher ---
-
-    async function initLanguageSwitcher() {
+// FUNCIÓN CORREGIDA PARA EL LANGUAGE SWITCHER
+async function initLanguageSwitcher() {
+    try {
         const langToggleButton = document.getElementById('lang-toggle-btn');
         const langDropdown = document.getElementById('lang-dropdown');
         const currentLangDisplay = document.getElementById('current-lang-display');
         const enButton = document.getElementById('lang-en-btn');
         const esButton = document.getElementById('lang-es-btn');
 
-        if (!langToggleButton || !langDropdown) {
+        // Verificar que los elementos existen
+        if (!langToggleButton || !langDropdown || !currentLangDisplay || !enButton || !esButton) {
+            console.warn('Language switcher elements not found');
             return;
         }
 
-
+        // Función para cargar traducciones
         async function loadTranslations() {
             try {
-                const responseEN = await fetch('./language/en.json');
-                const responseES = await fetch('./language/es.json');
+                const [responseEN, responseES] = await Promise.all([
+                    fetch('./language/en.json'),
+                    fetch('./language/es.json')
+                ]);
 
                 if (!responseEN.ok || !responseES.ok) {
                     throw new Error('Network response was not ok');
                 }
 
-                const translationsEN = await responseEN.json();
-                const translationsES = await responseES.json();
+                const [translationsEN, translationsES] = await Promise.all([
+                    responseEN.json(),
+                    responseES.json()
+                ]);
 
                 return { en: translationsEN, es: translationsES };
             } catch (error) {
@@ -86,16 +71,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const translations = await loadTranslations();
-        if (!translations) return;
+        if (!translations) {
+            console.warn('Translations could not be loaded');
+            return;
+        }
 
         let currentLang = localStorage.getItem('language') || 'en';
 
-
+        // Función para cambiar idioma
         const setLanguage = (lang) => {
             currentLang = lang;
             localStorage.setItem('language', lang);
             document.documentElement.lang = lang;
 
+            // Actualizar elementos con data-key
             document.querySelectorAll('[data-key]').forEach(element => {
                 const key = element.getAttribute('data-key');
                 if (translations[lang] && translations[lang][key]) {
@@ -104,14 +93,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
 
-            // ¡LÍNEA CLAVE! Le decimos a Lucide que vuelva a renderizar los íconos.
-            lucide.replace();
+            // Re-renderizar iconos de Lucide
+            if (typeof lucide !== 'undefined') {
+                lucide.replace();
+            }
 
+            // Actualizar display del idioma actual
             currentLangDisplay.textContent = lang.toUpperCase();
             langDropdown.classList.add('hidden');
         };
 
-
+        // Event listeners
         langToggleButton.addEventListener('click', (event) => {
             event.stopPropagation();
             langDropdown.classList.toggle('hidden');
@@ -127,17 +119,28 @@ document.addEventListener('DOMContentLoaded', function () {
             setLanguage('es');
         });
 
-
+        // Cerrar dropdown al hacer click fuera
         document.addEventListener('click', (event) => {
-            if (!langDropdown.classList.contains('hidden') && !langToggleButton.contains(event.target)) {
+            if (!langDropdown.classList.contains('hidden') &&
+                !langToggleButton.contains(event.target) &&
+                !langDropdown.contains(event.target)) {
                 langDropdown.classList.add('hidden');
             }
         });
 
+        // Establecer idioma inicial
         setLanguage(currentLang);
-    }
 
-    initLanguageSwitcher();
+    } catch (error) {
+        console.error('Error initializing language switcher:', error);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar language switcher
+    initLanguageSwitcher().catch(error => {
+        console.error('Failed to initialize language switcher:', error);
+    });
 
     // --- Testimonial Carousel ---
     const slider = document.querySelector('.testimonial-slider');
@@ -148,10 +151,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const nextBtn = slider.parentElement.querySelector('.next-btn');
         const dotsContainer = slider.parentElement.querySelector('.testimonial-dots');
 
-        if (testimonials.length > 1) {
+        if (testimonials.length > 1 && wrapper && prevBtn && nextBtn && dotsContainer) {
             let currentIndex = 0;
             const totalSlides = testimonials.length;
 
+            // Crear dots
             for (let i = 0; i < totalSlides; i++) {
                 const dot = document.createElement('span');
                 dot.classList.add('dot');
@@ -159,6 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 dot.dataset.index = i;
                 dotsContainer.appendChild(dot);
             }
+
             const dots = dotsContainer.querySelectorAll('.dot');
 
             const updateCarousel = () => {
@@ -186,26 +191,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-
-    function showView(viewId, elementId = null) {
-        document.querySelectorAll('.page-view').forEach(view => {
-            view.style.display = 'none';
-        });
-
-        const viewToShow = document.getElementById(viewId);
-        if (viewToShow) {
-            viewToShow.style.display = 'block';
-            // Si se pasó un ID de elemento, hace scroll hacia él
-            if (elementId) {
-                document.querySelector(elementId).scrollIntoView({ behavior: 'smooth' });
-            } else {
-                window.scrollTo(0, 0);
-            }
-        } else {
-            console.error('La vista con el ID "' + viewId + '" no fue encontrada.');
-        }
-    }
-
+    // Hacer la función showView global
     window.showView = showView;
 });
-
