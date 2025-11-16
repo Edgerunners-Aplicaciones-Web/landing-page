@@ -77,6 +77,18 @@
                     <div class="team-member-card text-center"> <img src="https://placehold.co/200x200/2C3E91/FFFFFF?text=AL" alt="Team Member 5" class="w-32 h-32 mx-auto rounded-full shadow-lg mb-4"> <h4 class="font-brand font-bold text-lg" data-key="team_member5_name">Alex Lee</h4> <p class="text-gray-500" data-key="team_member5_role">QA & Testing</p> </div>
                 </div>
             </div>
+            <!-- VIDEO: Full-width YouTube section under Meet the Team -->
+<div class="container mx-auto px-6 mt-12">
+  <h3 class="text-2xl md:text-3xl font-brand font-bold text-[--primary-blue] mb-6" data-key="team_video_title">Meet the Team — Our Story</h3>
+  <div class="video-full rounded-2xl overflow-hidden shadow-2xl">
+    <!-- Replace the src ID with your YouTube video ID if you want another video -->
+    <iframe
+      src="https://www.youtube.com/embed/qemqQHaeCYo"
+      title="Smart Stay - Team and Product"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  </div>
         </div>
 
         <div id="pilot" class="py-20 bg-[--accent-green]">
@@ -98,15 +110,69 @@
                              class="testimonial-blob w-64 h-64 md:w-80 md:h-80 object-cover">
                     </div>
                 </div>
-                <div class="text-center mt-12">
-                    <h2 class="text-3xl md:text-4xl font-brand font-bold text-white mb-4" data-key="pilot_title">Schedule Your Pilot Program</h2>
-                    <p class="max-w-2xl mx-auto text-white/90 mb-8" data-key="pilot_subtitle">
-                        Discover firsthand how Smart Stay can transform your hotel. Let's start the conversation.
-                    </p>
-                    <a href="#" class="bg-white text-[--primary-blue] font-bold text-lg py-4 px-10 rounded-full uppercase font-body tracking-wider hover:bg-gray-200 transition-colors">
-                        <span data-key="pilot_cta">Book a Call</span>
-                    </a>
-                </div>
+                <!-- === NEED HELP FORM (replaces pilot) === -->
+<div id="pilot" class="py-20 bg-[--accent-green]">
+  <div class="container mx-auto px-6">
+    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 md:p-12 shadow-2xl">
+      <div class="text-white text-center mb-8">
+        <h2 class="text-3xl md:text-4xl font-brand font-bold" data-key="needhelp_title">Need help?</h2>
+        <p class="max-w-2xl mx-auto text-white/90 mt-4" data-key="needhelp_subtitle">
+          Tell us about your hotel and what you need — we'll contact you with a tailored proposal.
+        </p>
+      </div>
+
+      <form id="needhelp-form" class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-800" onsubmit="handleNeedHelpSubmit(event)">
+        <div class="col-span-1">
+          <label class="block mb-1 font-semibold" data-key="form_label_fullname">Full name</label>
+          <input data-key-placeholder="form_ph_fullname" id="fullName" type="text" required class="w-full p-3 rounded-lg border border-gray-200" placeholder="Your name">
+        </div>
+
+        <div class="col-span-1">
+          <label class="block mb-1 font-semibold" data-key="form_label_hotel">Hotel / Company</label>
+          <input data-key-placeholder="form_ph_hotel" id="hotelName" type="text" class="w-full p-3 rounded-lg border border-gray-200" placeholder="Hotel name">
+        </div>
+
+        <div>
+          <label class="block mb-1 font-semibold" data-key="form_label_role">Role</label>
+          <input data-key-placeholder="form_ph_role" id="role" type="text" class="w-full p-3 rounded-lg border border-gray-200" placeholder="Your role">
+        </div>
+
+        <div>
+          <label class="block mb-1 font-semibold" data-key="form_label_email">Email</label>
+          <input data-key-placeholder="form_ph_email" id="email" type="email" required class="w-full p-3 rounded-lg border border-gray-200" placeholder="you@company.com">
+        </div>
+
+        <div>
+          <label class="block mb-1 font-semibold" data-key="form_label_phone">Phone</label>
+          <input data-key-placeholder="form_ph_phone" id="phone" type="tel" class="w-full p-3 rounded-lg border border-gray-200" placeholder="+51 9 123 45678">
+        </div>
+
+        <div>
+          <label class="block mb-1 font-semibold" data-key="form_label_interest">Area of interest</label>
+          <select id="interest" data-key-value="form_option_select" class="w-full p-3 rounded-lg border border-gray-200">
+            <option value="pms" data-key="form_option_pms">PMS</option>
+            <option value="guest_app" data-key="form_option_guest_app">Guest App</option>
+            <option value="iot" data-key="form_option_iot">IoT / Smart Rooms</option>
+            <option value="financial" data-key="form_option_financial">Financial & Reports</option>
+            <option value="other" data-key="form_option_other">Other</option>
+          </select>
+        </div>
+
+        <div class="md:col-span-2">
+          <label class="block mb-1 font-semibold" data-key="form_label_message">Message</label>
+          <textarea data-key-placeholder="form_ph_message" id="message" rows="5" class="w-full p-3 rounded-lg border border-gray-200" placeholder="Tell us what you need..."></textarea>
+        </div>
+
+        <div class="md:col-span-2 flex items-center justify-between mt-2">
+          <div class="text-sm text-white/80" data-key="form_privacy_text">
+            We will contact you shortly. Your data is safe with us.
+          </div>
+          <button type="submit" class="bg-white text-[--primary-blue] font-bold py-3 px-6 rounded-full shadow-md" data-key="form_submit_btn">Request info</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
             </div>
         </div>
     </section>
@@ -616,6 +682,491 @@
     </div>
 </footer>
 
-<script src="./js/script.js"></script>
+<script>document.addEventListener("DOMContentLoaded", () => {
+    lucide.createIcons();
+
+    const langToggleBtn = document.getElementById("lang-toggle-btn");
+    const langDropdown = document.getElementById("lang-dropdown");
+    const langEnBtn = document.getElementById("lang-en-btn");
+    const langEsBtn = document.getElementById("lang-es-btn");
+    const currentLangDisplay = document.getElementById("current-lang-display");
+
+    // 👉 Diccionario de traducciones
+    const translations = {
+        en: {
+            "nav_products": "Products",
+  "nav_solutions": "Solutions",
+  "nav_pricing": "Pricing",
+  "nav_success": "Success Stories",
+  "nav_resources": "Resources",
+  "nav_login": "Login",
+  "nav_register": "Register",
+  "hero_title": "Hotel Management + IoT: The Perfect Synergy",
+  "hero_subtitle": "Unleash your hotel's potential with an intelligent ecosystem that optimizes operations and revolutionizes the guest experience.",
+  "hero_cta": "Try DEMO",
+  "about_title": "Who We Are",
+  "about_description": "Smart Stay is a hotel management platform that integrates reservations, operations, and guest experience in one place. We digitize your hotel so you can save time, reduce costs, and offer a first-class service. We are a team of passionate software engineering students dedicated to revolutionizing the hospitality industry with technology.",
+  "team_title": "Meet the Team",
+  "team_member1_name": "Italo 'Okami' Verona",
+  "team_member1_role": "Project Lead & Architect",
+  "team_member2_name": "Jane Doe",
+  "team_member2_role": "Frontend Developer",
+  "team_member3_name": "John Smith",
+  "team_member3_role": "Backend Developer",
+  "team_member4_name": "Emily Martinez",
+  "team_member4_role": "UX/UI Designer",
+  "team_member5_name": "Alex Lee",
+  "team_member5_role": "QA & Testing",
+  "pilot_testimonial_text": "\"With Smart Stay, we have reduced reservation and check-in/check-out management time by 40%, optimizing our staff's work. The platform is intuitive, and support is always available when we need it.\"",
+  "pilot_testimonial_name": "Maria Lopez",
+  "pilot_testimonial_role": "General Manager, Hotel Sol y Mar",
+  "pilot_title": "Schedule Your Pilot Program",
+  "pilot_subtitle": "Discover firsthand how Smart Stay can transform your hotel. Let's start the conversation.",
+  "pilot_cta": "Book a Call",
+  "products_hero_title": "Our Products: Technology that Transforms Hotel Management",
+  "products_hero_subtitle": "From reservations to smart experiences, all in one place.",
+  "products_hero_cta": "Download Brochure",
+  "products_intro": "Smart Stay offers a modular ecosystem, divided into key areas of hotel management. You can choose exactly what your hotel needs, or integrate them all to get a complete solution.",
+  "product1_title": "Hotel Management",
+  "product1_feat1": "PMS (Property Management System): Control of reservations, rooms, check-in/out.",
+  "product1_feat2": "Channel Manager: Synchronization with Booking, Expedia, Airbnb.",
+  "product1_feat3": "Web Booking Engine: Direct reservations from the hotel's website.",
+  "product2_title": "Guest Experience",
+  "product2_feat1": "Smart Room Control (IoT): Control of lights, air, TV from mobile.",
+  "product2_feat2": "App for Guests: Online check-in, room service, requests.",
+  "product2_feat3": "Feedback and Surveys: Real-time opinions with AI analytics.",
+  "product3_title": "Financial & Operational",
+  "product3_feat1": "Financial Reports: Dashboard with revenue and expense metrics.",
+  "product3_feat2": "Payment Management: Digital cards, e-wallets, electronic invoicing.",
+  "product3_feat3": "Inventory and Housekeeping: Supply management, cleaning, maintenance.",
+  "product4_title": "Security & Support",
+  "product4_feat1": "Access Control: Digital or NFC keys for guests and staff.",
+  "product4_feat2": "24/7 Support & Training: Assistance for staff and continuous training.",
+  "solutions_title": "Solutions adapted to every type of property",
+  "solutions_cta": "See our packs:",
+  "solutions_pack1_title": "Boutique Hotels",
+  "solutions_pack1_desc": "Ideal for small hotels seeking personalization.<br>Includes products:",
+  "solutions_pack1_li1": "PMS",
+  "solutions_pack1_li2": "Web Booking Engine",
+  "solutions_pack1_li3": "Basic Financial Reports",
+  "solutions_pack1_li4": "Guest App",
+  "solutions_pack1_li5": "Feedback & Surveys",
+  "solutions_pack1_btn": "Download Brochure",
+  "solutions_pack2_title": "Hotel Chains",
+  "solutions_pack2_desc": "Designed for large groups with multiple locations.<br>Includes products:",
+  "solutions_pack2_li1": "Advanced PMS",
+  "solutions_pack2_li2": "Channel Manager",
+  "solutions_pack2_li3": "Comprehensive Financial Reports",
+  "solutions_pack2_li4": "Inventory & Housekeeping",
+  "solutions_pack2_li5": "Access Control",
+  "solutions_pack2_li6": "Smart Room Control (IoT)",
+  "solutions_pack2_li7": "Advanced Analytics",
+  "solutions_pack2_btn": "Download Brochure",
+  "solutions_pack3_title": "Alternative Accommodations",
+  "solutions_pack3_desc": "For small and flexible businesses.<br>Includes products:",
+  "solutions_pack3_li1": "Web Booking Engine",
+  "solutions_pack3_li2": "Payment Management",
+  "solutions_pack3_li3": "Feedback & Surveys",
+  "solutions_pack3_li4": "Guest App",
+  "solutions_pack3_li5": "24/7 Support",
+  "solutions_pack3_btn": "Download Brochure",
+  "footer_tagline": "Transforming hospitality with technology.",
+  "footer_product": "Product",
+  "footer_pms": "Hotel Management",
+  "footer_guest_exp": "Guest Experience",
+  "footer_iot": "IoT Control",
+  "footer_company": "Company",
+  "footer_about": "About Us",
+  "footer_press": "Press",
+  "footer_careers": "Careers",
+  "footer_resources": "Resources",
+  "footer_blog": "Blog",
+  "footer_support": "Support",
+  "footer_contact": "Contact",
+  "footer_copyright": "&copy; 2025 Smart Stay. All rights reserved. Developed with passion in Lima, Peru.",
+  "pricing_hero_title": "Our Prices and Plans",
+  "pricing_hero_subtitle": "Designed to fit your needs",
+  "pricing_header_category": "Category",
+  "pricing_header_feature": "Product / Functionality",
+  "pricing_header_normal": "Normal Plan",
+  "pricing_header_plus": "Plus Plan",
+  "pricing_included": "Included",
+  "pricing_addon": "Add-on",
+  "pricing_cat_hotel": "Hotel Management",
+  "pricing_feat_pms": "PMS (Property Management System)",
+  "pricing_feat_pms_desc": "Reservation, room, check-in/out management.",
+  "pricing_feat_channel": "Channel Manager",
+  "pricing_feat_channel_desc": "Sync with Booking, Expedia, Airbnb.",
+  "pricing_feat_booking_engine": "Web Booking Engine",
+  "pricing_feat_booking_engine_desc": "Direct reservations from the hotel's website.",
+  "pricing_cat_guest": "Guest Experience",
+  "pricing_feat_smart_room": "Smart Room Control (IoT)",
+  "pricing_feat_smart_room_desc": "Control lights, air, TV, and curtains.",
+  "pricing_feat_guest_app": "App for Guests",
+  "pricing_feat_guest_app_desc": "Online check-in, room service, requests.",
+  "pricing_feat_feedback": "Feedback & Digital Surveys",
+  "pricing_cat_financial": "Financial & Operational",
+  "pricing_feat_reports": "Financial Reports",
+  "pricing_feat_reports_desc": "Dashboard with revenue and expenses.",
+  "pricing_feat_payments": "Payment Management",
+  "pricing_feat_payments_desc": "Cards, e-wallets, electronic invoicing.",
+  "pricing_feat_inventory": "Inventory & Housekeeping",
+  "pricing_feat_inventory_desc": "Supply management, cleaning, maintenance.",
+  "pricing_cat_security": "Security & Support",
+  "pricing_feat_access": "Access Control",
+  "pricing_feat_access_desc": "Digital or NFC keys.",
+  "pricing_feat_support": "24/7 Support",
+  "pricing_support_basic": "Basic (email & chat)",
+  "pricing_support_premium": "Premium (phone + personalized onboarding)",
+  "success_hero_title": "Hotel Success Stories with SMARTSTAY",
+  "success_hero_subtitle": "What do they and their guests say?",
+  "success_guest_title": "Their guest:",
+  "success_story1_title": "Boutique Hotel \"Andes View\" - Cusco",
+  "success_story1_main_quote": "\"Before, we had to use three different systems for reservations, housekeeping, and billing. With Smart Stay, everything is integrated, and now we dedicate more time to our guests and less to administration.\"",
+  "success_story1_main_author": "General Manager",
+  "success_story1_guest_quote": "\"I checked in from my phone and by the time I arrived, the digital key was ready. Everything was quick and seamless, I loved it.\"",
+  "success_story2_title": "Medium Hotel \"Costa Dorada\" - Lima",
+  "success_story2_main_quote": "\"The guest app revolutionized our service. Requests arrive in real-time and the team responds faster. Our clients value this efficiency very much.\"",
+  "success_story2_main_author": "Operations Manager",
+  "success_story2_guest_quote": "\"I was able to order room service from the app and even schedule my room cleaning for a time that was convenient for me. I felt the hotel adapted to me.\"",
+  "success_story3_title": "Chain \"Sunset Resort\"",
+  "success_story3_main_quote": "\"What surprised us the most was the speed of implementation. In less than two months, we had the system running in all our hotels and the staff trained.\"",
+  "success_story3_main_author": "Technology Director",
+  "success_story3_guest_quote": "\"I was impressed to be able to control the lights, air, and curtains from my phone. It was like being in a smart hotel, much more comfortable than other places I've stayed.\"",
+  "resources_hero_title": "Product Documentation",
+  "resources_doc1_title": "PMS (Property Management System)",
+  "resources_doc1_desc": "User manual for reservations, check-in/out, and initial setup.",
+  "resources_doc2_title": "Channel Manager",
+  "resources_doc2_desc": "Guide to connect and sync with Booking, Expedia, Airbnb.",
+  "resources_doc3_title": "Financial Management",
+  "resources_doc3_desc": "Reports, invoices, and digital payment management.",
+  "resources_doc_btn": "Download",
+  "resources_video_title": "Video Demo",
+  "resources_blog_title": "Blogs and News",
+  "resources_blog1_title": "How Tech AI is Transforming the Guest Experience",
+  "resources_blog2_title": "Smart Hotels: Trends and Tech Solutions",
+  "resources_blog3_title": "Optimizing Hotel Operations",
+  "resources_blog_btn": "Visit",
+  "// --- TEAM VIDEO ---": {},
+  "team_video_title": "Meet Our Team in Action",
+  "team_video_ceo": "CEO - Italo Verona",
+  "team_video_cto": "CTO - Jane Doe",
+  "team_video_cmo": "CMO - Emily Martinez",
+
+  "// --- CONTACT FORM ---": {},
+  "contact_title": "Contact Us",
+  "contact_subtitle": "Tell us about your hotel and let’s build something amazing together.",
+  "form_name": "Full Name",
+  "form_hotel": "Hotel or Company",
+  "form_role": "Your Role",
+  "form_email": "Email Address",
+  "form_phone": "Phone Number",
+  "form_interest": "What are you interested in?",
+  "interest_cleaning": "Cleaning Management",
+  "interest_maintenance": "Maintenance Automation",
+  "interest_full": "Full SmartStay System",
+  "form_message": "Additional Message",
+  "form_send": "Send Message",
+  "team_video_title": "Video About The Team",
+    "pilot_testimonial_text": "With Smart Stay, we have reduced reservation and check-in/check-out management time by 40%, optimizing our staff's work. The platform is intuitive, and support is always available when we need it.",
+    "pilot_testimonial_name": "Maria Lopez",
+    "pilot_testimonial_role": "General Manager, Hotel Sol y Mar",
+    "needhelp_title": "Need help?",
+    "needhelp_subtitle": "Tell us about your hotel and what you need — we'll contact you with a tailored proposal.",
+    "form_label_fullname": "Full name",
+    "form_label_hotel": "Hotel / Company",
+    "form_label_role": "Role",
+    "form_label_email": "Email",
+    "form_label_phone": "Phone",
+    "form_label_interest": "Area of interest",
+    "form_label_message": "Message",
+    "form_ph_fullname": "Your name",
+    "form_ph_hotel": "Hotel name",
+    "form_ph_role": "Your role",
+    "form_ph_email": "you@company.com",
+    "form_ph_phone": "+51 9 123 45678",
+    "form_ph_message": "Tell us what you need...",
+    "form_option_pms": "PMS",
+    "form_option_guest_app": "Guest App",
+    "form_option_iot": "IoT / Smart Rooms",
+    "form_option_financial": "Financial & Reports",
+    "form_option_other": "Other",
+    "form_submit_btn": "Request info",
+    "form_privacy_text": "We will contact you shortly. Your data is safe with us."
+        },
+
+        es: {
+            "nav_products": "Productos",
+            "nav_solutions": "Soluciones",
+            "nav_pricing": "Precios",
+            "nav_success": "Casos de Éxito",
+            "nav_resources": "Recursos",
+    "//--- GLOBAL & NAVIGATION ---": {},
+  "nav_products": "Producto",
+  "nav_solutions": "Soluciones",
+  "nav_pricing": "Precios",
+  "nav_success": "Casos de Éxito",
+  "nav_resources": "Recursos",
+  "nav_login": "Iniciar Sesión",
+  "nav_register": "Registrarse",
+
+  "//--- HOME PAGE: HERO & ABOUT ---": {},
+  "hero_title": "Gestión Hotelera + IoT: La Sinergia Perfecta",
+  "hero_subtitle": "Desata el potencial de tu hotel con un ecosistema inteligente que optimiza la operación y revoluciona la experiencia de tus huéspedes.",
+  "hero_cta": "Probar DEMO",
+  "about_title": "Quiénes Somos",
+  "about_description": "Smart Stay es una plataforma de gestión hotelera que integra reservas, operaciones y experiencia del huésped en un solo lugar. Digitalizamos tu hotel para que ahorres tiempo, reduzcas costos y ofrezcas un servicio de primera. Somos un equipo de estudiantes de ingeniería de software apasionados por revolucionar la industria hotelera con tecnología.",
+  "team_title": "Conoce al Equipo",
+  "team_member1_name": "Italo 'Okami' Verona",
+  "team_member1_role": "Líder de Proyecto y Arquitecto",
+  "team_member2_name": "Jane Doe",
+  "team_member2_role": "Desarrolladora Frontend",
+  "team_member3_name": "John Smith",
+  "team_member3_role": "Desarrollador Backend",
+  "team_member4_name": "Emily Martinez",
+  "team_member4_role": "Diseñadora UX/UI",
+  "team_member5_name": "Alex Lee",
+  "team_member5_role": "QA y Testing",
+
+  "//--- HOME PAGE: PILOT & TESTIMONIAL ---": {},
+  "pilot_testimonial_text": "\"Con Smart Stay, hemos reducido el tiempo de gestión de reservas y check-in/check-out en un 40%, optimizando el trabajo de nuestro personal. La plataforma es intuitiva y el soporte está siempre disponible cuando lo necesitamos.\"",
+  "pilot_testimonial_name": "María López",
+  "pilot_testimonial_role": "Gerente General, Hotel Sol y Mar",
+  "pilot_title": "Agenda tu Programa Piloto",
+  "pilot_subtitle": "Descubre de primera mano cómo Smart Stay puede transformar tu hotel. Comencemos la conversación.",
+  "pilot_cta": "Reservar una Llamada",
+
+  "//--- PRODUCTS PAGE ---": {},
+  "products_hero_title": "Nuestros Productos: Tecnología que Transforma la Gestión Hotelera",
+  "products_hero_subtitle": "Desde reservas hasta experiencias inteligentes, todo en un solo lugar.",
+  "products_hero_cta": "Descargar Folleto",
+  "products_intro": "Smart Stay ofrece un ecosistema modular, dividido en áreas clave de la gestión hotelera. Puedes elegir exactamente lo que tu hotel necesita, o integrarlos todos para obtener una solución completa.",
+  "product1_title": "Gestión Hotelera",
+  "product1_feat1": "PMS (Property Management System): Control de reservas, habitaciones, check-in/out.",
+  "product1_feat2": "Channel Manager: Sincronización con Booking, Expedia, Airbnb.",
+  "product1_feat3": "Motor de Reservas Web: Reservas directas desde la web del hotel.",
+  "product2_title": "Experiencia del Huésped",
+  "product2_feat1": "Control de Habitación Inteligente (IoT): Control de luces, aire, TV desde el móvil.",
+  "product2_feat2": "App para Huéspedes: Check-in online, servicio de habitaciones, solicitudes.",
+  "product2_feat3": "Feedback y Encuestas: Opiniones en tiempo real con analítica IA.",
+  "product3_title": "Financiera y Operativa",
+  "product3_feat1": "Reportes Financieros: Panel con métricas de ingresos y gastos.",
+  "product3_feat2": "Gestión de Pagos: Tarjetas digitales, monederos electrónicos, facturación electrónica.",
+  "product3_feat3": "Inventario y Housekeeping: Gestión de suministros, limpieza, mantenimiento.",
+  "product4_title": "Seguridad y Soporte",
+  "product4_feat1": "Control de Accesos: Llaves digitales o NFC para huéspedes y personal.",
+  "product4_feat2": "Soporte y Capacitación 24/7: Asistencia al personal y formación continua.",
+
+  "//--- SOLUTIONS PAGE ---": {},
+  "solutions_title": "Soluciones adaptadas a cada tipo de establecimientos",
+  "solutions_cta": "Conoce nuestros packs:",
+  "solutions_pack1_title": "Hoteles Boutique",
+  "solutions_pack1_desc": "Ideal para hoteles pequeños que buscan personalización.<br>Incluye productos:",
+  "solutions_pack1_li1": "PMS",
+  "solutions_pack1_li2": "Motor de Reservas Web",
+  "solutions_pack1_li3": "Reportes Financieros básicos",
+  "solutions_pack1_li4": "App para Huéspedes",
+  "solutions_pack1_li5": "Feedback y Encuestas",
+  "solutions_pack1_btn": "Descargar Folleto",
+  "solutions_pack2_title": "Cadenas Hoteleras",
+  "solutions_pack2_desc": "Diseñado para grupos grandes con múltiples sedes.<br>Incluye productos:",
+  "solutions_pack2_li1": "PMS avanzado",
+  "solutions_pack2_li2": "Channel Manager",
+  "solutions_pack2_li3": "Reportes Financieros completos",
+  "solutions_pack2_li4": "Inventario y Housekeeping",
+  "solutions_pack2_li5": "Control de Accesos",
+  "solutions_pack2_li6": "Control de Habitación Inteligente (IoT)",
+  "solutions_pack2_li7": "Analítica avanzada",
+  "solutions_pack2_btn": "Descargar Folleto",
+  "solutions_pack3_title": "Alojamientos Alternativos",
+  "solutions_pack3_desc": "Para negocios pequeños y flexibles.<br>Incluye productos:",
+  "solutions_pack3_li1": "Motor de Reservas Web",
+  "solutions_pack3_li2": "Gestión de Pagos",
+  "solutions_pack3_li3": "Feedback y Encuestas",
+  "solutions_pack3_li4": "App para Huéspedes",
+  "solutions_pack3_li5": "Soporte 24/7",
+  "solutions_pack3_btn": "Descargar Folleto",
+
+  "//--- PRICING PAGE ---": {},
+  "pricing_hero_title": "Nuestros Precios y Planes",
+  "pricing_hero_subtitle": "Para que se adapte a tus necesidades",
+  "pricing_header_category": "Categoría",
+  "pricing_header_feature": "Producto / Funcionalidad",
+  "pricing_header_normal": "Plan Normal",
+  "pricing_header_plus": "Plan Plus",
+  "pricing_included": "Incluido",
+  "pricing_addon": "Add-on",
+  "pricing_cat_hotel": "Gestión Hotelera",
+  "pricing_feat_pms": "PMS (Property Management System)",
+  "pricing_feat_pms_desc": "Gestión de reservas, habitaciones, check-in/out.",
+  "pricing_feat_channel": "Channel Manager",
+  "pricing_feat_channel_desc": "Sincronización con Booking, Expedia, Airbnb.",
+  "pricing_feat_booking_engine": "Motor de Reservas Web",
+  "pricing_feat_booking_engine_desc": "Reservas directas desde la web del hotel.",
+  "pricing_cat_guest": "Experiencia del Huésped",
+  "pricing_feat_smart_room": "Smart Room Control (IoT)",
+  "pricing_feat_smart_room_desc": "Control de luces, aire, TV y cortinas.",
+  "pricing_feat_guest_app": "App para Huéspedes",
+  "pricing_feat_guest_app_desc": "Check-in online, room service, solicitudes.",
+  "pricing_feat_feedback": "Feedback y Encuestas Digitales",
+  "pricing_cat_financial": "Gestión Financiera y Operativa",
+  "pricing_feat_reports": "Reportes Financieros",
+  "pricing_feat_reports_desc": "Dashboard de ingresos y gastos.",
+  "pricing_feat_payments": "Gestión de Pagos",
+  "pricing_feat_payments_desc": "Tarjetas, billeteras digitales, facturación electrónica.",
+  "pricing_feat_inventory": "Inventario y Housekeeping",
+  "pricing_feat_inventory_desc": "Suministros, limpieza y mantenimiento.",
+  "pricing_cat_security": "Seguridad y Soporte",
+  "pricing_feat_access": "Control de Accesos",
+  "pricing_feat_access_desc": "Llaves digitales o NFC.",
+  "pricing_feat_support": "Soporte 24/7",
+  "pricing_support_basic": "Básico (email y chat)",
+  "pricing_support_premium": "Premium (teléfono + onboarding personalizado)",
+
+  "//--- SUCCESS STORIES PAGE ---": {},
+  "success_hero_title": "Casos de éxito de hoteles con SMARTSTAY",
+  "success_hero_subtitle": "¿Qué dicen ellos y sus huéspedes?",
+  "success_guest_title": "Su huésped:",
+  "success_story1_title": "Hotel Boutique \"Andes View\" - Cusco",
+  "success_story1_main_quote": "\"Antes teníamos que usar tres sistemas distintos para reservas, housekeeping y facturación. Con Smart Stay, todo está integrado, y ahora dedicamos más tiempo a los huéspedes y menos a la administración.\"",
+  "success_story1_main_author": "Gerente General",
+  "success_story1_guest_quote": "\"Hice el check-in desde mi celular y al llegar ya tenía la llave digital lista. Todo fue rápido y sin filas, me encantó.\"",
+  "success_story2_title": "Hotel mediano \"Costa Dorada\" - Lima",
+  "success_story2_main_quote": "\"La app para huéspedes revolucionó nuestro servicio. Las solicitudes llegan en tiempo real y el equipo responde más rápido. Nuestros clientes valoran mucho esta eficiencia.\"",
+  "success_story2_main_author": "Jefe de Operaciones",
+  "success_story2_guest_quote": "\"Pude pedir room service desde la app y hasta programar la limpieza de mi habitación a la hora que me convenía. Sentí que el hotel se adaptaba a mí.\"",
+  "success_story3_title": "Cadena \"Sunset Resort\"",
+  "success_story3_main_quote": "\"Lo que más nos sorprendió fue la rapidez de implementación. En menos de dos meses teníamos el sistema funcionando en todos nuestros hoteles y con el staff capacitado.\"",
+  "success_story3_main_author": "Director de Tecnología",
+  "success_story3_guest_quote": "\"Me impresionó poder controlar las luces, el aire y las cortinas desde mi celular. Fue como estar en un hotel inteligente, mucho más cómodo que en otros lugares donde he estado.\"",
+
+  "//--- RESOURCES PAGE ---": {},
+  "resources_hero_title": "Documentación de Productos",
+  "resources_doc1_title": "PMS (Property Management System)",
+  "resources_doc1_desc": "Manual de usuario para reservas, check-in/out y configuración inicial.",
+  "resources_doc2_title": "Channel Manager",
+  "resources_doc2_desc": "Guía para conectar y sincronizar con Booking, Expedia, Airbnb.",
+  "resources_doc3_title": "Gestión Financiera",
+  "resources_doc3_desc": "Reportes, facturas y gestión de pagos digitales.",
+  "resources_doc_btn": "Descargar",
+  "resources_video_title": "Video Demo",
+  "resources_blog_title": "Blogs y Noticias",
+  "resources_blog1_title": "Cómo la Inteligencia Tecnológica Está Transformando la Experiencia del Huésped",
+  "resources_blog2_title": "Hoteles Inteligentes: Tendencias y Soluciones Tecnológicas",
+  "resources_blog3_title": "Optimización de Operaciones Hoteleras",
+  "resources_blog_btn": "Visitar",
+
+  "//--- FOOTER ---": {},
+  "footer_tagline": "Transformando la hospitalidad con tecnología.",
+  "footer_product": "Producto",
+  "footer_pms": "Gestión Hotelera",
+  "footer_guest_exp": "Experiencia del Huésped",
+  "footer_iot": "Control IoT",
+  "footer_company": "Compañía",
+  "footer_about": "Acerca de Nosotros",
+  "footer_press": "Prensa",
+  "footer_careers": "Carreras",
+  "footer_resources": "Recursos",
+  "footer_blog": "Blog",
+  "footer_support": "Soporte",
+  "footer_contact": "Contacto",
+  "footer_copyright": "&copy; 2025 Smart Stay. Todos los derechos reservados. Desarrollado con pasión en Lima, Perú.",
+  "// --- VIDEO DEL EQUIPO ---": {},
+  "team_video_title": "Conoce a Nuestro Equipo en Acción",
+  "team_video_ceo": "CEO – Italo Verona",
+  "team_video_cto": "CTO – Jane Doe",
+  "team_video_cmo": "CMO – Emily Martinez",
+
+  "// --- FORMULARIO DE CONTACTO ---": {},
+  "contact_title": "Contáctanos",
+  "contact_subtitle": "Cuéntanos sobre tu hotel y construyamos algo increíble juntos.",
+  "form_name": "Nombre Completo",
+  "form_hotel": "Hotel o Empresa",
+  "form_role": "Tu Cargo",
+  "form_email": "Correo Electrónico",
+  "form_phone": "Número de Teléfono",
+  "form_interest": "¿Qué te interesa?",
+  "interest_cleaning": "Gestión de Limpieza",
+  "interest_maintenance": "Automatización de Mantenimiento",
+  "interest_full": "Sistema Completo SmartStay",
+  "form_message": "Mensaje Adicional",
+  "form_send": "Enviar Mensaje",
+     "team_video_title": "Conoce al Equipo — Nuestra Historia",
+    "pilot_testimonial_text": "Con Smart Stay hemos reducido el tiempo de gestión de reservas y de check-in/check-out en un 40%, optimizando el trabajo de nuestro personal. La plataforma es intuitiva y el soporte está siempre disponible cuando lo necesitamos.",
+    "pilot_testimonial_name": "María López",
+    "pilot_testimonial_role": "Gerente General, Hotel Sol y Mar",
+    "needhelp_title": "¿Necesitas ayuda?",
+    "needhelp_subtitle": "Cuéntanos sobre tu hotel y lo que necesitas — te contactaremos con una propuesta personalizada.",
+    "form_label_fullname": "Nombre completo",
+    "form_label_hotel": "Hotel / Empresa",
+    "form_label_role": "Cargo",
+    "form_label_email": "Correo",
+    "form_label_phone": "Teléfono",
+    "form_label_interest": "Área de interés",
+    "form_label_message": "Mensaje",
+    "form_ph_fullname": "Tu nombre",
+    "form_ph_hotel": "Nombre del hotel",
+    "form_ph_role": "Tu cargo",
+    "form_ph_email": "tú@empresa.com",
+    "form_ph_phone": "+51 9 123 45678",
+    "form_ph_message": "Cuéntanos qué necesitas...",
+    "form_option_pms": "PMS",
+    "form_option_guest_app": "App para Huéspedes",
+    "form_option_iot": "IoT / Habitaciones Inteligentes",
+    "form_option_financial": "Finanzas y Reportes",
+    "form_option_other": "Otro",
+    "form_submit_btn": "Solicitar información",
+    "form_privacy_text": "Te contactaremos pronto. Tus datos están seguros con nosotros."
+        }
+    };
+
+    // 👉 Mostrar / ocultar dropdown
+    langToggleBtn.addEventListener("click", () => {
+        langDropdown.classList.toggle("hidden");
+    });
+
+    // 👉 Función para traducir
+    function applyLanguage(lang) {
+        const dict = translations[lang];
+
+        document.querySelectorAll("[data-key]").forEach(el => {
+            const key = el.getAttribute("data-key");
+            if (dict[key]) {
+                el.textContent = dict[key];
+            }
+        });
+
+        currentLangDisplay.textContent = lang.toUpperCase();
+        langDropdown.classList.add("hidden");
+    }
+
+    // Botones
+    langEnBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        applyLanguage("en");
+    });
+
+    langEsBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        applyLanguage("es");
+    });
+});</script>
+<script>
+function showView(viewId) {
+    // Ocultar TODAS las vistas
+    document.querySelectorAll(".page-view").forEach(v => {
+        v.classList.add("hidden");
+    });
+
+    // Mostrar la vista seleccionada
+    const view = document.getElementById(viewId);
+    if (view) {
+        view.classList.remove("hidden");
+        // subir al inicio al cambiar vista
+        window.scrollTo(0, 0);
+    }
+}
+</script>
+
 </body>
 </html>

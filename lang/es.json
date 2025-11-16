@@ -168,5 +168,25 @@
   "footer_blog": "Blog",
   "footer_support": "Soporte",
   "footer_contact": "Contacto",
-  "footer_copyright": "&copy; 2025 Smart Stay. Todos los derechos reservados. Desarrollado con pasión en Lima, Perú."
+  "footer_copyright": "&copy; 2025 Smart Stay. Todos los derechos reservados. Desarrollado con pasión en Lima, Perú.",
+  "// --- VIDEO DEL EQUIPO ---": {},
+  "team_video_title": "Conoce a Nuestro Equipo en Acción",
+  "team_video_ceo": "CEO – Italo Verona",
+  "team_video_cto": "CTO – Jane Doe",
+  "team_video_cmo": "CMO – Emily Martinez",
+
+  "// --- FORMULARIO DE CONTACTO ---": {},
+  "contact_title": "Contáctanos",
+  "contact_subtitle": "Cuéntanos sobre tu hotel y construyamos algo increíble juntos.",
+  "form_name": "Nombre Completo",
+  "form_hotel": "Hotel o Empresa",
+  "form_role": "Tu Cargo",
+  "form_email": "Correo Electrónico",
+  "form_phone": "Número de Teléfono",
+  "form_interest": "¿Qué te interesa?",
+  "interest_cleaning": "Gestión de Limpieza",
+  "interest_maintenance": "Automatización de Mantenimiento",
+  "interest_full": "Sistema Completo SmartStay",
+  "form_message": "Mensaje Adicional",
+  "form_send": "Enviar Mensaje"
 }

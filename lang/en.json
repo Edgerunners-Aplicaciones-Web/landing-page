@@ -151,5 +151,26 @@
   "resources_blog1_title": "How Tech AI is Transforming the Guest Experience",
   "resources_blog2_title": "Smart Hotels: Trends and Tech Solutions",
   "resources_blog3_title": "Optimizing Hotel Operations",
-  "resources_blog_btn": "Visit"
+  "resources_blog_btn": "Visit",
+  "// --- TEAM VIDEO ---": {},
+  "team_video_title": "Meet Our Team in Action",
+  "team_video_ceo": "CEO - Italo Verona",
+  "team_video_cto": "CTO - Jane Doe",
+  "team_video_cmo": "CMO - Emily Martinez",
+
+  "// --- CONTACT FORM ---": {},
+  "contact_title": "Contact Us",
+  "contact_subtitle": "Tell us about your hotel and let’s build something amazing together.",
+  "form_name": "Full Name",
+  "form_hotel": "Hotel or Company",
+  "form_role": "Your Role",
+  "form_email": "Email Address",
+  "form_phone": "Phone Number",
+  "form_interest": "What are you interested in?",
+  "interest_cleaning": "Cleaning Management",
+  "interest_maintenance": "Maintenance Automation",
+  "interest_full": "Full SmartStay System",
+  "form_message": "Additional Message",
+  "form_send": "Send Message"
 }
+
